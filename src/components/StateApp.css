@@ -1,0 +1,12 @@
+.dashboard-state {
+  margin-left: 250px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.top-widget {
+  background: white;
+  padding: 10px 0px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+

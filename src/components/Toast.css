@@ -1,0 +1,20 @@
+.toast {
+    position: absolute;
+    padding: 20px;
+    color: white;
+    border-radius: 2px;
+    background: #c85848;
+    right: 30px;
+}
+
+.toast.visible {
+  transition: 0.6s;
+  opacity: 0.9;
+  top: 20px;
+}
+
+.toast.hidden {
+    transition: 0.6s;
+    opacity: 0;
+    top: -40px;
+}

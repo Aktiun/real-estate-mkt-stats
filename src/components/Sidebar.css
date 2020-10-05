@@ -1,0 +1,137 @@
+/* The sidebar menu */
+.sidenav {
+    height: 100%;
+    width: 240px;
+    background: white;
+    position: fixed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.sidenav::after {
+    content: '';
+    height: 100%;
+    min-width: 240px;
+    position: fixed;
+    opacity: 0.9;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: url('../images/house.jpg') no-repeat;
+    overflow-x: hidden;
+    background-position-x: -280px;
+    background-position-y: calc(100% + 180px);
+}
+
+.sidenav-title {
+    font-family: serif;
+    background: white;
+    padding: 25px 0px 20px 0px;
+    z-index: 10;
+}
+.sidenav-title > .logo {
+    width: 100%;
+    text-align: center;
+}
+.sidenav-title > .title {
+    margin-top: 10px;
+    font-size: 27px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: #133756;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidenav-title > .subtitle {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #899620;
+    color: #8b7f32;
+}
+.sidenav-menu {
+    position: relative;
+    top: 30px;
+    left: 20px;
+    width: 80%;
+    z-index: 10;
+}
+
+.menu-item {
+    background: #a0b773;
+    color: white;
+    background: #457297;
+    color: #fefcbb;
+    font-size: 12px;
+    font-weight: 500px;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: left;
+    transition: 0.5s;
+    clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.menu-item:hover {
+    padding-left: 60px;
+    width: 82%;
+}
+
+.menu-item.inactive {
+    background: #878686;
+    cursor: auto;
+    color: #ccc;
+}
+.menu-item.inactive:hover {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.menu-item.active {
+    background: #515a3e;
+    background: #1a5281;
+    width: 82%;
+    padding-left: 60px;
+}
+
+.sidenav-footer {
+    position: absolute;
+    z-index: 4;
+    background: #457297;
+    bottom: 0px;
+    opacity: 0.9;
+    padding: 10px 0px;
+    width: 240px;
+    font-size: 0.77em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #efeee8;
+}
+
+.realtor-link > a, 
+.chartfactor-link > a {
+    color: #f7f5d8 !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.realtor-link > a:hover, 
+.chartfactor-link > a:hover {
+    color: #fbf5a6 !important;
+}
+
+.realtor-link {
+  font-size: 0.76em;
+}
+
+.chartfactor-link {
+  margin-top: 10px;
+}

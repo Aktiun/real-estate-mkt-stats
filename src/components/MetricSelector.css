@@ -1,0 +1,73 @@
+.metric-selector {
+    position:relative;
+    height: 30px;
+    margin: 10px 25px 10px 20px;
+    width: 100%;
+}
+
+.metric-title {
+    font-size: 11.5px;
+    color: #4c4a4a;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.selected-metric {
+    color: #323232;
+    font-weight: bold;
+    position: absolute;
+    font-size: 0.9em;
+    width: 100%;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.selector-input {
+    z-index:4;
+    border-radius: 1px;
+    background: white;
+}
+
+.selector {
+    position: absolute;
+    width: 100%;
+    opacity: 0
+}
+
+.value-list {
+    transition: max-height .3s;
+}
+
+.value-list.open {
+    border: 0.5px solid #EEE;
+}
+
+.value-list > ul > li {
+    width: 96% !important;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin-bottom: 16px;
+    align-items: flex-start !important;
+}
+
+.value-list > ul > li > .label {
+    font-size: 17px;
+    font-family: sans-serif;
+}
+
+.value-list > ul > li > .fieldname {
+    font-size: 17px;
+    margin: 0px !important;
+    font-family: sans-serif;
+}
+
+@media (max-width: 900px) {
+    .metric-title {
+      text-align: left;
+    }
+    .selected-metric {
+        justify-content: flex-start;
+    }
+}

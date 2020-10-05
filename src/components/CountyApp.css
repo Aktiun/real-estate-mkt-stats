@@ -1,0 +1,29 @@
+.dashboard-county {
+  top:0px;
+  height: 100%;
+  margin-left: 30px;
+  width: 80%;
+  overflow-y: auto;
+  background: #ededed;
+  position:absolute;
+  background-position-y: -20%;
+  background-position-x: 800px;
+  overflow: auto;
+  box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
+  -moz-box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
+  -webkit-box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
+}
+
+.dashboard-county.visible {
+    transition: left 1.0s;
+    left: 218px;
+}
+
+.dashboard-county.hidden {
+    transition: left 1.2s;
+    left: -2248px;
+}
+
+.column-county {
+  margin-right: 10px;
+}
