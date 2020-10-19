@@ -4,7 +4,7 @@ This application visualizes Real Estate market statistics such as number of list
 
 The data is sourced from [Realtor.com](https://www.realtor.com/research/data/) and updated as soon as it becomes available the first days of the month.
 
-This application was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is available online at (https://chartfactor.com/real-estate/).
+This application was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is available online at https://chartfactor.com/real-estate/.
 
 ## Running the application locally
 
