@@ -50,7 +50,7 @@ html {
 
 .focus-tool > a {
   position: absolute;
-  top: 220px;
+  top: 250px;
   right: 25px;
   background-color: #fe9b59;
   border-radius: 5px;
@@ -63,7 +63,7 @@ html {
 
 .focus-tool > p {
   position: absolute;
-  top: 80px;
+  top: 120px;
   right: 25px;
   padding: 10px;
   z-index: 3;
