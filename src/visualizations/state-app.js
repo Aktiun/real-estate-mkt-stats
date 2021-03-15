@@ -129,6 +129,15 @@ export const trend = function () {
 }
 
 export const rawdata = function () {
+    const moment = cf.getDependency('moment');
+    let formatter = {
+        fields: ['@timestamp'],
+        format: function(field, value) {
+            return {
+                value: moment(value).format('Mo MMM YYYY hh:mm:ss A')
+            }
+          }
+      }
     return cf
         .provider('Elasticsearch')
         .source('realtor_monthly_inventory_state_all')
@@ -138,6 +147,7 @@ export const rawdata = function () {
         .set('loader', 'images/loading.gif')
         .set('showRowNumber', false)
         .set('autoSizeColumns', true)
+        .set('cellFormat', formatter)
 }
 
 export const fieldselector = function () {

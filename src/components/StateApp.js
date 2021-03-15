@@ -36,7 +36,7 @@ function StateApp() {
     return (
         <div className="dashboard-state">
             <div className="top-widget">
-              <div className="row">
+              <div className="header-widget">
                 <InteractionManager />
                 <MetricSelector/>
               </div>

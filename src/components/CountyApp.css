@@ -12,6 +12,7 @@
   box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
   -moz-box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
   -webkit-box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
+  z-index: 4;
 }
 
 .dashboard-county.visible {

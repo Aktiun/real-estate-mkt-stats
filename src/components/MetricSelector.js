@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { fieldselector as stateMetrics } from '../visualizations/state-app'
 import './MetricSelector.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function MetricSelector() {
     const [ field, setField ] = useState('Active listings')
-    const caret = ' ▼'
+    const caret = (<FontAwesomeIcon icon={faCaretDown} />);
     let stateStyle = { height: 35, visibility: 'visible' }
 
     const openSelector = (e) => {
@@ -35,8 +37,11 @@ function MetricSelector() {
 
     return (
         <div className={`metric-selector`} id="metric-selector">
-            <div className="metric-title">Selected Metric</div>
-            <div className="selected-metric" onClick={openSelector}> {caret + field} </div>
+            <div className="metric-title"></div>
+            <div className="selected-metric metric-animation" id="metric-animation" onClick={openSelector}>
+                <a>{field}</a>
+                <a>{caret}</a>
+            </div>
             <div className="selector" id="state-fs" style={stateStyle}></div>
         </div>
     )

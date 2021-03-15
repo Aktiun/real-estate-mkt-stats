@@ -10,3 +10,23 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
+.header-widget {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.header-widget > .widget {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+@media only screen and (max-width: 1400px){
+  .header-widget {
+    display: flex;
+    flex-direction: column;
+  }
+  .metric-selector {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
