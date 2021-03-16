@@ -146,10 +146,6 @@ export const rawdata = function () {
         .graph('Raw Data Table')
         .set('loader', 'images/loading.gif')
         .set('showRowNumber', false)
-        // .set("columnsWidth", [
-        //     {"@timestamp":165},
-        //     {"active_listing_count_mm":259}
-        // ])
         .set('autoSizeColumns', true)
         .set('cellFormat', formatter)
 }
