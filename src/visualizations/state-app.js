@@ -134,7 +134,7 @@ export const rawdata = function () {
         fields: ['@timestamp'],
         format: function(field, value) {
             return {
-                value: moment(value.slice(0,4) + "-" + value.slice(4,6)).format('YYYY MMMM')
+                value: moment(value.slice(0,4) + "-" + value.slice(4,6)).format('MMM, YYYY')
             }
           }
       }

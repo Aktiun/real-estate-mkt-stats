@@ -34,8 +34,9 @@ function App() {
     focusToolBg.classList.remove("focus-tool-bg");
     focusToolBg.classList.add("focus-tool-hide");
 
-    document.getElementById("metric-animation")
-      .classList.remove("metric-animation");
+    const focusArrow = document.getElementById("focus-arrow");
+    focusArrow.classList.remove("focus-arrow");
+    focusArrow.classList.add("focus-tool-hide");
   }
 
   const startAnimation = () => {
@@ -47,8 +48,9 @@ function App() {
     focusToolBg.classList.remove("focus-tool-hide");
     focusToolBg.classList.add("focus-tool-bg");
     
-    document.getElementById("metric-animation")
-      .classList.add("metric-animation");
+    const focusArrow = document.getElementById("focus-arrow");
+    focusArrow.classList.remove("focus-tool-hide");
+    focusArrow.classList.add("focus-arrow");
   }
 
   const doGotIt = () => {
@@ -62,7 +64,7 @@ function App() {
         <a onClick={doGotIt}>Got it!</a>
         <p>You can visualize different metrics by selecting them here</p>
       </div>
-      <a className="focus-arrow"><FontAwesomeIcon icon={faLongArrowAltRight} /></a>
+      <a id="focus-arrow" className="focus-arrow"><FontAwesomeIcon icon={faLongArrowAltRight} /></a>
       <div id="focus-tool-bg"></div>
       <div className="App">
         <StateApp />
