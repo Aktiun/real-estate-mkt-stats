@@ -134,7 +134,7 @@ export const rawdata = function () {
         fields: ['@timestamp'],
         format: function(field, value) {
             return {
-                value: moment(value).format('Mo MMM YYYY hh:mm:ss A')
+                value: moment(value.slice(0,4) + "-" + value.slice(4,6)).format('YYYY MMMM')
             }
           }
       }
@@ -146,6 +146,10 @@ export const rawdata = function () {
         .graph('Raw Data Table')
         .set('loader', 'images/loading.gif')
         .set('showRowNumber', false)
+        // .set("columnsWidth", [
+        //     {"@timestamp":165},
+        //     {"active_listing_count_mm":259}
+        // ])
         .set('autoSizeColumns', true)
         .set('cellFormat', formatter)
 }
