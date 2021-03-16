@@ -11,6 +11,8 @@ function MetricSelector() {
 
     const openSelector = (e) => {
         const currentTop = e.target.offsetTop
+        const selectorInput = document.getElementsByClassName("selector-input")[0];
+        selectorInput.blur();
         //const list = document.getElementById('field-selector-values-state-fs')
         //const top = currentTop + 30 + 'px'
 

@@ -22,13 +22,14 @@
     grid-column: 1;
     grid-row: 2;
     place-self: center flex-end;
-    background-color: #e1f5fe;
+    background-color: #5f86a6;
     padding: 10px 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-radius: 5px;
     width: 500px;
+    color: white;
 }
 
 .metric-animation {
