@@ -6,14 +6,23 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function MetricSelector() {
     const [ field, setField ] = useState('Active listings')
+    const [ openMS, setOpenMS ] = useState(false);
     const caret = (<FontAwesomeIcon icon={faCaretDown} />);
     let stateStyle = { height: 35, visibility: 'visible' }
 
     const openSelector = (e) => {
-        const currentTop = e.target.offsetTop
-        const selectorInput = document.getElementsByClassName("selector-input")[0];
-        selectorInput.blur();
-        //const list = document.getElementById('field-selector-values-state-fs')
+        // const currentTop = e.target.offsetTop
+        const selector = document.getElementById('field-selector-values-state-fs');
+        if (openMS) {
+            if (selector.classList.contains('open')) {
+                selector.classList.remove("open");
+            } else {
+                selector.classList.add("open");
+            }
+        } else {
+            setOpenMS(true);
+        }
+        
         //const top = currentTop + 30 + 'px'
 
         //list.style.width = '620px'
@@ -40,11 +49,11 @@ function MetricSelector() {
     return (
         <div className={`metric-selector`} id="metric-selector">
             <div className="metric-title"></div>
-            <div className="selected-metric metric-animation" id="metric-animation" onClick={openSelector}>
+            <div className="selected-metric" id="metric-animation">
                 <a>{field}</a>
                 <a>{caret}</a>
             </div>
-            <div className="selector" id="state-fs" style={stateStyle}></div>
+            <div className="selector" id="state-fs" style={stateStyle} onClick={openSelector}></div>
         </div>
     )
 }

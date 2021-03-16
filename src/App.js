@@ -8,6 +8,8 @@ import Toast from './components/Toast'
 import { setProvider } from './visualizations/provider'
 import { ContextProvider } from './ContextProvider'
 import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 
 setProvider()
 
@@ -58,8 +60,9 @@ function App() {
     <ContextProvider>
       <div id="focus-tool">
         <a onClick={doGotIt}>Got it!</a>
-        <p>Remember this: you can select a different metric to see more varied data.</p>
+        <p>You can visualize different metrics by selecting them here</p>
       </div>
+      <a className="focus-arrow"><FontAwesomeIcon icon={faLongArrowAltRight} /></a>
       <div id="focus-tool-bg"></div>
       <div className="App">
         <StateApp />
