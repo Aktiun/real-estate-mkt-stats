@@ -30,6 +30,8 @@
     border-radius: 5px;
     width: 500px;
     color: white;
+    z-index: 7;
+    cursor: pointer;
 }
 
 .selected-metric > a {
@@ -50,11 +52,13 @@
     grid-column: 1;
     grid-row: 2;
     place-self: flex-end;
-    z-index: 8;
+    z-index: 6;
 }
 
 .value-list {
     transition: max-height .3s;
+    top:70px !important;
+    right: 35px !important;
 }
 
 .value-list.open {
