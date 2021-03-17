@@ -84,6 +84,14 @@
     .value-list {
         top:130px !important;
         right: unset !important;
-        left: 270px !important;
+        left: 20px !important;
+    }
+}
+
+@media only screen and (min-width: 1401px){
+    .value-list {
+        top:70px !important;
+        right: 35px !important;
+        left: unset !important;
     }
   }
