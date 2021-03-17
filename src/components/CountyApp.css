@@ -28,3 +28,12 @@
 .column-county {
   margin-right: 10px;
 }
+
+@media only screen and (max-width: 1400px){
+  .dashboard-county.visible {
+    left: 0px;
+  }
+  .dashboard-county {
+    margin-left: 0px;
+  }
+}

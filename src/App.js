@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
 import Sidebar from './components/Sidebar'
-import MetricSelector from './components/MetricSelector'
 import CountyApp from './components/CountyApp'
 import StateApp from './components/StateApp'
 import Toast from './components/Toast'
@@ -18,7 +17,7 @@ function App() {
   const [gotIt, setGotIt] = useState(localStorage.getItem('gotIt'))
 
   useEffect(() => {
-    if(gotIt && gotIt == 'true') {
+    if(gotIt && gotIt === 'true') {
       stopAnimation();
     } else {
       startAnimation();
@@ -61,10 +60,10 @@ function App() {
   return (
     <ContextProvider>
       <div id="focus-tool">
-        <a onClick={doGotIt}>Got it!</a>
+        <span onClick={doGotIt}>Got it!</span>
         <p>You can visualize different metrics by selecting them here</p>
       </div>
-      <a id="focus-arrow" className="focus-arrow"><FontAwesomeIcon icon={faLongArrowAltRight} /></a>
+      <span id="focus-arrow" className="focus-arrow"><FontAwesomeIcon icon={faLongArrowAltRight} /></span>
       <div id="focus-tool-bg"></div>
       <div className="App">
         <StateApp />
