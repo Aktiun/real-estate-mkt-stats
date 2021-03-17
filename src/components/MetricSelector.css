@@ -31,14 +31,13 @@
 }
 
 .selector-input {
-    z-index:8;
+    z-index:-1;
     border-radius: 1px;
     background: white;
     padding: 0;
 }
 
 .selector {
-    width: 570px;
     opacity: 0;
     grid-column: 1;
     grid-row: 2;
@@ -85,6 +84,33 @@
         top:130px !important;
         right: unset !important;
         left: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .selected-metric {
+        width: unset;
+    }
+    .value-list {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    .value-list {
+        width: 79%;
+    }
+}
+
+@media only screen and (max-width: 360px){
+    .value-list {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 280px){
+    .value-list {
+        width: 70%;
     }
 }
 
