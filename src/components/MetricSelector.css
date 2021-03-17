@@ -6,15 +6,6 @@
     z-index: 2;
 }
 
-.metric-title {
-    font-size: 11.5px;
-    color: #4c4a4a;
-    text-transform: uppercase;
-    text-align: right;
-    grid-column: 1;
-    grid-row: 1;
-}
-
 .selected-metric {
     color: #323232;
     font-weight: bold;
@@ -59,7 +50,6 @@
     transition: max-height .3s;
     top:70px !important;
     right: 35px !important;
-    padding: 0px 15px !important;
 }
 
 .value-list.open {
@@ -85,11 +75,15 @@
     font-family: sans-serif;
 }
 
-@media (max-width: 900px) {
-    .metric-title {
-      text-align: left;
+@media only screen and (max-width: 1400px){
+    .metric-selector {
+      grid-column: 1;
+      grid-row: 2;
+      display: block;
     }
-    .selected-metric {
-        justify-content: flex-start;
+    .value-list {
+        top:130px !important;
+        right: unset !important;
+        left: 270px !important;
     }
-}
+  }
