@@ -153,3 +153,60 @@ div::-webkit-scrollbar-thumb {
         flex-direction: column;
     }
 }
+
+@media only screen and (max-width: 540px){
+  .focus-tool {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  .focus-tool {
+    left: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 300px){
+  .focus-tool {
+    width: 220px;
+    padding: 10px;
+    left: 10px;
+  }
+}
+
+@media only screen and (max-width: 1400px){
+  .focus-tool {
+    top:230px;
+    right: unset;
+    left: 20px;
+  }
+  
+  .focus-arrow {
+    top:140px;
+    right: unset;
+    left: 150px;
+    animation: bounceUpDown 1s infinite;
+    animation-delay: 3s;
+  }
+
+  .focus-arrow > svg {
+    transform: rotate(-90deg) !important;
+  }
+}
+
+@keyframes bounceUpDown {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+}
