@@ -13,20 +13,16 @@ function MetricSelector() {
     const openSelector = () => {
         const selector = document.getElementById('field-selector-values-state-fs');
         var mItems = document.getElementsByClassName('field-state-fs');
-        if (openMS) {
-            if (selector.classList.contains('open')) {
-                selector.classList.remove("open");
-                Array.prototype.forEach.call(mItems, item => item.classList.remove("hidden"));
-                selector.style.paddingLeft = '15px';
-                selector.style.paddingRight = '21px';
-            } else {
-                selector.classList.add("open");
-                Array.prototype.forEach.call(mItems, item => item.classList.remove("hidden"));
-                selector.style.paddingLeft = '15px';
-                selector.style.paddingRight = '15px';
-            }
+        if (selector.classList.contains('open')) {
+            selector.classList.remove("open");
+            Array.prototype.forEach.call(mItems, item => item.classList.remove("hidden"));
+            selector.style.paddingLeft = '15px';
+            selector.style.paddingRight = '21px';
         } else {
-            setOpenMS(true);
+            selector.classList.add("open");
+            Array.prototype.forEach.call(mItems, item => item.classList.remove("hidden"));
+            selector.style.paddingLeft = '15px';
+            selector.style.paddingRight = '15px';
         }
     }
 
