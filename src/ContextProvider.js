@@ -28,6 +28,10 @@ export function ContextProvider(props) {
         }
     }
 
+    const showToast = (message) => {
+        setState({ ...state, toast: { message, visible: true } })
+    }
+
     const hideToast = () => {
         setState({ ...state, toast: { ...state.toast, visible: false } })
     }
@@ -35,7 +39,8 @@ export function ContextProvider(props) {
     const properties = {
         state,
         toggleCountyApp,
-        hideToast
+        hideToast,
+        showToast
     }
 
     return (

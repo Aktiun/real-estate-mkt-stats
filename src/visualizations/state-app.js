@@ -90,14 +90,14 @@ export const timerange = function () {
         .set('grid', grid)
         .set('color', color)
         .set('player', {
-            enable: true,
-            'pin-left': false,
-            step: 1,
-            'step-unit': 'MONTH',
-            refresh: 2,
-            'animation-delay': 0.8,
-            live: false,
-            autoplay: false
+            "enable": true,
+            "pin-left": false,
+            "step": 1,
+            "step-unit": 'MONTH',
+            "refresh": 2,
+            "animation-delay": 0.8,
+            "live": false,
+            "autoplay": false
         })
         .set('single-period', true)
 }
