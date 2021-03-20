@@ -18,7 +18,7 @@ function Widget({ id, size, style = {}, fill = true, title, viz }) {
             viz()
             .element(id)
             .on('notification', e => {
-                const msg = `${e.type}: ${e.message}`
+                const msg = `${e.message}`
                 showToast(msg)
             })
             .execute()
