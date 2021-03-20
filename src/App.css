@@ -14,8 +14,110 @@ html {
   left: 0;
   bottom: 0;
   right: 0;
+  position: absolute;  
+}
+
+.focus-tool {
   position: absolute;
-  z-index: -1;   
+  top:10px;
+  right: 685px;
+  width: 400px;
+  height: 160px;
+  border-radius: 5px 5px 5px 5px;
+  z-index: 7;
+  background-color: #fff;
+  animation: expandFocusArea 1s forwards;
+  animation-delay: 3s;
+  opacity: 0;
+}
+
+.focus-arrow {
+  position: absolute;
+  top:15px;
+  right: 615px;
+  z-index: 7;
+  color: #fff;
+  font-size: 60px;
+  animation: bounce 1s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  40% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+@keyframes expandFocusArea {
+  0% {
+    opacity: 0.2;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 0.97;
+    transform: translateY(0px);
+  }
+}
+
+.focus-tool-hide {
+  display: none;
+}
+
+.focus-tool > span {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  background-color: #fe9b59;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 3;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.focus-tool > p {
+  position: absolute;
+  top: 00px;
+  right: 20px;
+  padding: 10px;
+  z-index: 3;
+  font-size: 20px;
+  width: 80%;
+}
+
+.focus-tool-bg {
+  position: absolute;
+  top:0;
+  right: 7px;
+  width: 100%;
+    height: 100%;
+  z-index: -1;
+  background-color:transparent;
+  animation: showFocusArea 1s forwards;
+  animation-delay: 3s;
+}
+
+@keyframes showFocusArea {
+  0% {
+    z-index: 6;
+    background-color:rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    z-index: 6;
+    background-color:rgba(0, 0, 0, 0.3);
+  }
 }
 
 .row {
@@ -50,4 +152,61 @@ div::-webkit-scrollbar-thumb {
         align-items: unset;
         flex-direction: column;
     }
+}
+
+@media only screen and (max-width: 540px){
+  .focus-tool {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  .focus-tool {
+    left: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 300px){
+  .focus-tool {
+    width: 220px;
+    padding: 10px;
+    left: 10px;
+  }
+}
+
+@media only screen and (max-width: 1400px){
+  .focus-tool {
+    top:230px;
+    right: unset;
+    left: 20px;
+  }
+  
+  .focus-arrow {
+    top:140px;
+    right: unset;
+    left: 150px;
+    animation: bounceUpDown 1s infinite;
+    animation-delay: 3s;
+  }
+
+  .focus-arrow > svg {
+    transform: rotate(-90deg) !important;
+  }
+}
+
+@keyframes bounceUpDown {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
 }

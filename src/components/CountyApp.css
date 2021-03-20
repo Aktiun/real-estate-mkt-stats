@@ -12,6 +12,7 @@
   box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
   -moz-box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
   -webkit-box-shadow: 20px 11px 55px -9px rgba(0,0,0,0.81);
+  z-index: 2;
 }
 
 .dashboard-county.visible {
@@ -26,4 +27,13 @@
 
 .column-county {
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 1400px){
+  .dashboard-county.visible {
+    left: 0px;
+  }
+  .dashboard-county {
+    margin-left: 0px;
+  }
 }

@@ -82,6 +82,17 @@ export const trend = function () {
 }
 
 export const rawdata = function () {
+
+    const moment = cf.getDependency('moment');
+    let formatter = {
+        fields: ['@timestamp'],
+        format: function(field, value) {
+            return {
+                value: moment(value.slice(0,4) + "-" + value.slice(4,6)).format('MMM, YYYY')
+            }
+          }
+      }
+
     return cf
         .provider('Elasticsearch')
         .source('realtor_monthly_inventory_county_all')
@@ -90,7 +101,8 @@ export const rawdata = function () {
         .graph('Raw Data Table')
         .set('loader', 'images/loading.gif')
         .set('showRowNumber', false)
-        .set('autoSizeColumns', true)
+        .set('autoSizeColumns', false)
+        .set('cellFormat', formatter)
 }
 
 export const fieldselector = function () {

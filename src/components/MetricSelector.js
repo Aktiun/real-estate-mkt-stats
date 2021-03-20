@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { fieldselector as stateMetrics } from '../visualizations/state-app'
 import './MetricSelector.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function MetricSelector() {
     const [ field, setField ] = useState('Active listings')
-    const caret = ' ▼'
+    const [ openMS, setOpenMS ] = useState(false);
+    const caret = (<FontAwesomeIcon icon={faCaretDown} />);
     let stateStyle = { height: 35, visibility: 'visible' }
 
-    const openSelector = (e) => {
-        const currentTop = e.target.offsetTop
-        //const list = document.getElementById('field-selector-values-state-fs')
-        //const top = currentTop + 30 + 'px'
-
-        //list.style.width = '620px'
-        //list.style.left = '900px'
-        //list.style.top = top
-        //list.classList.add('open')
+    const openSelector = () => {
+        const selector = document.getElementById('field-selector-values-state-fs');
+        var mItems = document.getElementsByClassName('field-state-fs');
+        if (selector.classList.contains('open')) {
+            selector.classList.remove("open");
+            Array.prototype.forEach.call(mItems, item => item.classList.remove("hidden"));
+            selector.style.paddingLeft = '15px';
+            selector.style.paddingRight = '21px';
+        } else {
+            selector.classList.add("open");
+            Array.prototype.forEach.call(mItems, item => item.classList.remove("hidden"));
+            selector.style.paddingLeft = '15px';
+            selector.style.paddingRight = '15px';
+        }
     }
 
     useEffect(() => {
-        const es = window.cf.getProviderByConfig({ name: 'Elasticsearch'});
 
+        const es = window.cf.getProviderByConfig({ name: 'Elasticsearch'});
         stateMetrics()
             .element('state-fs')
             .on('field-selected', e => { 
@@ -35,8 +43,11 @@ function MetricSelector() {
 
     return (
         <div className={`metric-selector`} id="metric-selector">
-            <div className="metric-title">Selected Metric</div>
-            <div className="selected-metric" onClick={openSelector}> {caret + field} </div>
+            <div className="metric-title"></div>
+            <div className="selected-metric" id="metric-animation" onClick={openSelector}>
+                <a>{field}</a>
+                <a>{caret}</a>
+            </div>
             <div className="selector" id="state-fs" style={stateStyle}></div>
         </div>
     )
