@@ -15,7 +15,7 @@ function Sidebar() {
             <div className={`openCountyApp${countyActive}`} onClick={state.countyApp? () => toggleCountyApp(false) : () => toggleCountyApp(true)}>
                 <FontAwesomeIcon icon={state.countyApp? faChevronLeft : faChevronRight} />
             </div>
-            <div className="sidenav">
+            <div className="sidenav" id="sidenav-re">
             <div className="sidenav-title">
                 <div className="logo">
                     <img src={icon} width={30} />
@@ -32,9 +32,9 @@ function Sidebar() {
                 </div>
                 <div
                     className={`menu-item${countyActive}`}
-                    onClick={() => toggleCountyApp(true)}
+                    onClick={() => toggleCountyApp(!state.countyApp)}
                 >
-                    Open County Data
+                    County Data
                 </div>
             </div>
             <div className="sidenav-footer">
