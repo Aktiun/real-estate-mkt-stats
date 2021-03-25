@@ -8,7 +8,7 @@ function Toast() {
 
     useEffect(() => {
         if (state.toast.visible) {
-          setTimeout(() => { hideToast() }, 2000)
+          setTimeout(() => { hideToast() }, 5000)
         }
     })
 
