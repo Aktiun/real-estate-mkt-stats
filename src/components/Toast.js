@@ -8,12 +8,12 @@ function Toast() {
 
     useEffect(() => {
         if (state.toast.visible) {
-          setTimeout(() => { hideToast() }, 2000)
+          setTimeout(() => { hideToast() }, 5000)
         }
     })
 
     return (
-        <div className={`toast ${cssClass}`}>
+        <div className={`toast ${cssClass} ${state.toast.toastPosition}`}>
           {state.toast.message}
         </div>
     )

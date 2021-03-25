@@ -469,10 +469,12 @@ export const imanager = function () {
             type: 'modern',
             disabledItems: {
                 style: `background: transparent;
-                color: #323232; box-shadow:none; 
+                color: #fffff; box-shadow:none; 
+                background-color: #5f86a6;
+                padding: 5px;
                 min-width: 100px`,
-                labelStyle: 'font-size: 11px;',
-                valueStyle: 'font-size: 14px; font-weight: bold',
+                labelStyle: 'font-size: 13px;',
+                valueStyle: 'font-size: 18px;',
                 filters: ['@timestamp']
             },
             trash: {

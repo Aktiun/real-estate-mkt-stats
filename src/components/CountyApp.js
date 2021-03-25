@@ -14,8 +14,9 @@ function CountyApp() {
     const appClass = state.countyApp ? 'visible' : 'hidden'
     const handleClick = (e) => {
         const selector = document.getElementById('dashboard-county')
+        const sideNav = document.getElementById('sidenav-re')
 
-        if (selector && !selector.contains(e.target)) {
+        if (selector && !selector.contains(e.target) && sideNav && !sideNav.contains(e.target)) {
             toggleCountyApp(false)
         }
     }
