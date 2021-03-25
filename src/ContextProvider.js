@@ -5,7 +5,8 @@ const initialState = {
     countyApp: false,
     toast: {
         message: '',
-        visible: false
+        visible: false,
+        toastPosition: ''
     }
 }
 
@@ -24,7 +25,7 @@ export function ContextProvider(props) {
             })
         } else if (toggle) {
             const message = 'Select a state to see its counties'
-            setState({ ...state, toast: { message, visible: true } })
+            setState({ ...state, toast: { message, visible: true, toastPosition: 'left' } })
         }
     }
 
@@ -34,6 +35,9 @@ export function ContextProvider(props) {
 
     const hideToast = () => {
         setState({ ...state, toast: { ...state.toast, visible: false } })
+        setTimeout(() => {
+            setState({ ...state, toast: { ...state.toast, visible: false, toastPosition: '' } })
+        }, 650)
     }
 
     const properties = {

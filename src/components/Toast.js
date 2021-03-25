@@ -13,7 +13,7 @@ function Toast() {
     })
 
     return (
-        <div className={`toast ${cssClass}`}>
+        <div className={`toast ${cssClass} ${state.toast.toastPosition}`}>
           {state.toast.message}
         </div>
     )
