@@ -11,7 +11,8 @@
 }
 
 .header-widget {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .header-widget > .widget {
@@ -54,15 +55,33 @@
     overflow-y: auto;
   }
 
+  .openCountyApp {
+    display: unset;
+  }
+}
+
+@media only screen and (max-width: 960px){
+  .header-widget {
+    grid-template-columns: 60% 40%;
+  }
+}
+
+@media only screen and (max-width: 780px){
+  .header-widget {
+    grid-template-columns: 70% 30%;
+  }
+}
+
+@media only screen and (max-width: 685px){
   .header-widget {
     display: flex;
     flex-direction: column;
   }
+
   .metric-selector {
+    margin: 10px 25px 10px 5px !important;
     grid-column: 1;
     grid-row: 2;
   }
-  .openCountyApp {
-    display: unset;
-  }
+
 }
