@@ -16,7 +16,7 @@ export function ContextProvider(props) {
     const toggleCountyApp = (toggle) => {
         const im = window.cf.getIManager()
         const filters = im ? im.get('api').getFilters() : []
-        const stateFilter = filters.find(f => f.getPath() === 'state_name')
+        const stateFilter = filters.find(f => f.getPath() === 'state_name.keyword')
 
         if (stateFilter) {
             setState({

@@ -2,14 +2,14 @@ export const setProvider = function () {
     window.cf.registerProvider({
         name: 'Elasticsearch',
         provider: 'elasticsearch',
-        url: 'https://chartfactor.com/elastic',
+        url: 'https://chartfactor.com/vcairlines',
         metadata: {
             realtor_monthly_inventory_state_all: {
                 fields: {
                     '@timestamp': {
                         label: 'Date'
                     },
-                    state_name: {
+                   'state_name.keyword': {
                         label: 'State Name'
                     },
                     active_listing_count: {
@@ -131,7 +131,7 @@ export const setProvider = function () {
                     '@timestamp': {
                         label: 'Date'
                     },
-                    state_name: {
+                    'state_name': {
                         label: 'State Name'
                     },
                     active_listing_count: {

@@ -14,10 +14,10 @@ function InteractionManager() {
 
     const imCallback = (data) => {
         const filters = data.filters || data.filter
-        const match = filters.find((f) => f.getPath() === 'state_name')
+        const match = filters.find((f) => f.getPath() === 'state_name.keyword')
 
         if (match) {
-            const item = document.getElementById('state_name')
+            const item = document.getElementById('state_name.keyword')
 
             changeTrendPinColor()
             item.style.background = STATE_COLORS[match.getValue()[0]]
@@ -27,7 +27,7 @@ function InteractionManager() {
     const resetFilters = (e) => {
         const api = window.cf.getIManager().get('api')
         const currentFilters = api.getFilters()
-        const nextFilterIsState = e.filters[0].getPath() === 'state_name'
+        const nextFilterIsState = e.filters[0].getPath() === 'state_name.keyword'
 
         if (currentFilters.length === 3 && nextFilterIsState) {
             api.removeFilter(
